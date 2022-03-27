@@ -1,0 +1,18 @@
+{
+  "name": "vinted-discord-bot-main",
+  "version": "1.0.0",
+  "description": "Un bot Discord pour Vinted, qui envoie un message lorsqu'une nouvelle annonce est publiée (selon certains critères).",
+  "main": "start-bots.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "docker": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
