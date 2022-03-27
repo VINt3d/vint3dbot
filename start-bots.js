@@ -13,7 +13,7 @@ const recreate = () => {
             console.log(`🐋 Starting ${bot.name}...`);
 
             const start = () => {
-                exec(`BOT=${bot.name} VINTED_BOT_ADMIN_IDS=${bot.adminIDs} VINTED_BOT_TOKEN=${bot.token} docker -f docker-compose.yaml -p bot-${bot.name} up -d`, (err, stdout, stderr) => {
+                exec(`BOT=${bot.name} VINTED_BOT_ADMIN_IDS=${bot.adminIDs} VINTED_BOT_TOKEN=${bot.token} docker-compose -f docker-compose.yaml -p bot-${bot.name} up -d`, (err, stdout, stderr) => {
                     if (err) {
                         console.error(`🐋 ${bot.name} failed to start.`);
                         console.error(err);
@@ -46,9 +46,9 @@ const restart = process.argv.includes('-restart');
 if (restart) {
     console.log('👋 Shutting down all bots...');
     bots.forEach((bot) => {
-        exec(`docker -p bot-${bot.name} stop`, (err, stdout, stderr) => {
+        exec(`docker-compose -p bot-${bot.name} stop`, (err, stdout, stderr) => {
             if (!err) {
-                exec(`docker -p bot-${bot.name} rm -f`, (err, stdout, stderr) => {
+                exec(`docker-compose -p bot-${bot.name} rm -f`, (err, stdout, stderr) => {
                     if (!err) {
                         console.log(`👋 Bot ${bot.name} has been shut down and removed.`);
                     } else {
