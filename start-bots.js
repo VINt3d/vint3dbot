@@ -46,9 +46,9 @@ const restart = process.argv.includes('-restart');
 if (restart) {
     console.log('👋 Shutting down all bots...');
     bots.forEach((bot) => {
-        exec(`docker-compose -p bot-${bot.name} stop`, (err, stdout, stderr) => {
+        exec(`docker -p bot-${bot.name} stop`, (err, stdout, stderr) => {
             if (!err) {
-                exec(`docker-compose -p bot-${bot.name} rm -f`, (err, stdout, stderr) => {
+                exec(`docker -p bot-${bot.name} rm -f`, (err, stdout, stderr) => {
                     if (!err) {
                         console.log(`👋 Bot ${bot.name} has been shut down and removed.`);
                     } else {
