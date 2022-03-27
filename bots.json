@@ -1,7 +1,7 @@
 [
     {
         "name": "VINT3D_BOT",
-        "token": "OTU3NDMxMzE5MDk1MjgzNzYy.Yj-rZg.kF-a2pcqXS4uLrvTKXNFdfnaYKs",
+        "token": "process.env.TOKEN",
         "adminIDs": "939998773143285770"
     }
 ]
